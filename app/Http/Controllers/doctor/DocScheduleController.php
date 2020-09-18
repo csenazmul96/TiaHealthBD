@@ -19,8 +19,13 @@ class DocScheduleController extends Controller{
     }
 
     public function index(){
+        // dd(Sentinel::getUser()->doctor);
         $schedule_name = Pharma::GenarateInvoiceNumber('doc_schedules','SCH');
-        $schedules = DocSchedule::orderBy('id','DESC')->get();
+        $schedules = DocSchedule::orderBy('id','DESC');
+        if(Sentinel::getUser()->inRole('doctor')){
+            $schedules = $schedules->where('doctor_id',Sentinel::getUser()->doctor->id);
+        }
+        $schedules = $schedules->get();
         $doctors = Doctor::all();
         return view('schedule.index',compact('schedules','doctors','schedule_name'));
     }
@@ -82,7 +87,13 @@ class DocScheduleController extends Controller{
 
     public function chart(){
 
-        $doctors = Doctor::all();
+        
+        if(Sentinel::getUser()->inRole('doctor')){
+            $doctors = Doctor::where('own_user_id',Sentinel::getUser()->id)->get();// $schedules->where('doctor_id',Sentinel::getUser()->doctor->id);
+            // dd($doctors);
+        }else{
+            $doctors = Doctor::all();
+        }
         return view('schedule.chart',compact('doctors'));
     }
 }

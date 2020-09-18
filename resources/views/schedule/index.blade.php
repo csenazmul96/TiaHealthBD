@@ -23,17 +23,20 @@ Appointment Schedule
                             <input type="text" name="name" value="{{old('name',$schedule_name)}}" class="form-control" id="name" placeholder="name" required autocomplete="off">
                             @include('elements.feedback',['field' => 'name'])
                         </div>
-
-                        <div class="form-group col-md-12 {{ $errors->has('doctor_id') ? ' has-danger' : '' }}">
-                            <label for="doctor_id">Doctor <sup class="text-danger font-bold">*</sup> :</label>
-                            <select name="doctor_id" class="form-control" id="doctor_id" required autocomplete="off">
-                                <option value="" selected disabled>Select Doctor</option>
-                                @foreach ($doctors as $row)
-                                    <option value="{{ $row->id}}">{{ $row->full_name }}</option>
-                                @endforeach
-                            </select>
-                            @include('elements.feedback',['field' => 'doctor_id'])
-                        </div>
+                        @if(Sentinel::getUser()->inRole('doctor'))
+                            <input type="hidden" name="doctor_id" value="{{Sentinel::getUser()->doctor->id}}">
+                        @else
+                            <div class="form-group col-md-12 {{ $errors->has('doctor_id') ? ' has-danger' : '' }}">
+                                <label for="doctor_id">Doctor <sup class="text-danger font-bold">*</sup> :</label>
+                                <select name="doctor_id" class="form-control" id="doctor_id" required autocomplete="off">
+                                    <option value="" selected disabled>Select Doctor</option>
+                                    @foreach ($doctors as $row)
+                                        <option value="{{ $row->id}}">{{ $row->full_name }}</option>
+                                    @endforeach
+                                </select>
+                                @include('elements.feedback',['field' => 'doctor_id'])
+                            </div>
+                        @endif
 
                         <div class="form-group col-md-12 {{ $errors->has('week_day') ? ' has-danger' : '' }}">
                             <label for="week_day">Week Day <sup class="text-danger font-bold">*</sup> :</label>
