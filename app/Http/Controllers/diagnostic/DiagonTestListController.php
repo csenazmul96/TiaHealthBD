@@ -13,7 +13,7 @@ class DiagonTestListController extends Controller
 {
 
     public function __construct(){
-        $this->middleware(['authorized','diagnostic']);
+        $this->middleware(['authorized','doctor']);
     }
     /**
      * Display a listing of the resource.

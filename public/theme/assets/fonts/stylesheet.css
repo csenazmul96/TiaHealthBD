@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Lyon Display Web Medium';
+    src: url('LyonDisplayWeb-Medium.eot');
+    src: url('LyonDisplayWeb-Medium.eot?#iefix') format('embedded-opentype'),
+        url('LyonDisplayWeb-Medium.woff2') format('woff2'),
+        url('LyonDisplayWeb-Medium.woff') format('woff'),
+        url('LyonDisplayWeb-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lyon Display Web';
+    src: url('LyonDisplayWeb-Regular.eot');
+    src: url('LyonDisplayWeb-Regular.eot?#iefix') format('embedded-opentype'),
+        url('LyonDisplayWeb-Regular.woff2') format('woff2'),
+        url('LyonDisplayWeb-Regular.woff') format('woff'),
+        url('LyonDisplayWeb-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

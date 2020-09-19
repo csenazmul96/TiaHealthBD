@@ -1,0 +1,197 @@
+.form_inline {
+    margin-bottom: 13px;
+    color: #666;
+    font-size: 10px;
+    padding: 0 10px 0 145px;
+    height: 40px;
+    line-height: 40px;
+    border: 0;
+    outline: 0;
+    outline-offset: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    border-radius: 2px;
+    box-shadow: none;
+    position: relative;
+    label {
+        color: #666;
+        text-transform: uppercase;
+        font-size: 10px;
+        font-weight: normal;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 12px;
+    }
+    .form-control {
+        background-color: #f0f0f0;
+        border: none;
+        border-radius: 0;
+        font-size: 10px;
+        padding: 0;
+        height: 40px;
+        &:focus {
+            outline: 0;
+            box-shadow: none;
+            border: none;
+            border-radius: 0;
+        }
+    }
+}
+
+
+.form_inline_border {
+    margin-bottom: 13px;
+    color: #666;
+    font-size: 10px;
+    padding: 0 10px 0 40%;
+    line-height: 32px;
+    border: 0;
+    outline: 0;
+    outline-offset: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    box-shadow: none;
+    position: relative;
+    label {
+        color: #666;
+        text-transform: uppercase;
+        font-size: 10px;
+        font-weight: normal;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 12px;
+        margin-bottom: 0;
+    }
+    .form-control {
+        background-color: #f0f0f0;
+        border: none;
+        border-radius: 0;
+        font-size: 10px;
+        padding: 0;
+        line-height: 30px;
+        height: auto;
+        text-transform: uppercase;
+        &:focus {
+            outline: 0;
+            box-shadow: none;
+            border: none;
+            border-radius: 0;
+        }
+    }
+}
+.form_inline_border_select {
+    padding: 0 0 0 0;
+    background-color: #f0f0f0;
+    select.form-control {
+        background-color: #f0f0f0;
+        padding-left: 40%;
+        border: none;
+        border-radius: 0;
+        font-size: 10px;
+        appearance: none;
+        color: #9b9a9a;
+        background: url(../media/images/select_arrow.png) no-repeat 99% center;
+        line-height: 30px;
+        height: auto;
+        text-transform: uppercase;
+        &:focus {
+            outline: 0;
+            box-shadow: none;
+            border: none;
+            border-radius: 0;
+        }
+    }
+}
+.required{
+    position: relative;
+    &:after {
+        content: '*';
+        margin-left: 3px;
+        color: #fc0758;
+        font-size: 13px;
+    }
+}
+
+/*----------------------------------------
+    CUSTOM RADIO
+----------------------------------------*/
+
+.custom_radio {
+    position: relative;
+    display: inline-block;
+}
+
+.custom_radio label {
+    padding-left: 30px;
+    padding-right: 10px;
+    margin-bottom: 0;
+    line-height: 18px;
+}
+
+.custom_radio input[type="radio"] {
+    position: absolute;
+    visibility: hidden;
+    height: 0px;
+}
+
+.custom_radio label::before {
+    content: "";
+    display: block;
+    height: 16px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 0;
+    border: 1px solid #bebebe;
+    border-radius: 100%;
+    top: 0;
+}
+
+.custom_radio label::after {
+    border-radius: 100%;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 0;
+    border: 1px solid #bebebe;
+    z-index: 5;
+    top: 0;
+}
+
+.custom_radio input[type="radio"]:checked~label::before {
+    background: transparent;
+    border: 1px solid #bebebe;
+}
+
+.custom_radio input[type="radio"]:checked~label::after {
+    border: 1px solid #bebebe;
+    background-color: #bebebe;
+}
+
+
+/*----------------------------
+    PLACEHOLDER FONT SIZE
+-----------------------------*/
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 10px;
+    color: #666;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    font-size: 10px;
+    color: #666;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    font-size: 10px;
+    color: #666;
+}
+:-moz-placeholder { /* Firefox 18- */
+    font-size: 10px;
+    color: #666;
+}

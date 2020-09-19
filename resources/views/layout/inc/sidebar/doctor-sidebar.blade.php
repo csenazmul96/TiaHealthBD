@@ -24,7 +24,7 @@
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
                 <li><a href="{{url('dashboard')}}"><i class="mdi mdi-home"></i><span class="hide-menu">Dashboard</span></a></li>
-
+                <li><a href="{{url('appointment-list')}}" class="{{ request()->is('appointment-list') ? 'active' : '' }}"><i class="mdi mdi-content-duplicate"></i> Appointments</a></li>
                 <li class="{{ request()->is('prescription/*') ? 'active' : '' }}">
                     <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="{{ Request::is('prescription/*')?'true':'false'}}"><i class="mdi mdi-calendar-text"></i><span class="hide-menu">Prescription</span></a>
                     <ul aria-expanded="{{ Request::is('prescription/*')?'true':'false'}}" class="collapse {{ Request::is('prescription/*')?'in':''}}">
@@ -37,6 +37,23 @@
                 <li><a href="{{url('medicines')}}" class="{{ request()->is('medicines/') ? 'active' : '' }}"><i class="mdi mdi-pill"></i><span class="hide-menu"> Medicines</span></a></li>
                 <li><a href="{{url('doctor/medicine/type')}}" class="{{ request()->is('doctor/medicine/type/*') ? 'active' : '' }}"><i class="mdi mdi-chart-pie"></i> <span class="hide-menu"> Categories</span></a></li>  
                 <li><a href="{{url('doctor/medicine/routine')}}" class="{{ request()->is('doctor/medicine/routine/*') ? 'active' : '' }}"><i class="mdi mdi-calendar-clock"></i> <span class="hide-menu"> Routine</span></a></li> 
+
+                <li class="{{ request()->is('schedule/') ? 'active' : '' }}">
+                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="{{ Request::is('schedule/')?'true':'false'}}"><i class="fa fa-clock-o"></i><span class="hide-menu"> Doctor schedule</span></a>
+                    <ul aria-expanded="{{ Request::is('schedule/*')?'true':'false'}}" class="collapse {{ Request::is('schedule/*')?'in':''}}">
+                        <li><a href="{{url('schedule')}}" class="{{ request()->is('schedule/') ? 'active' : '' }}"><i class="mdi mdi-view-list"></i> New Schedule</a></li>
+                            <li><a href="{{url('schedule/chart/')}}" class="{{ request()->is('schedule/chart/') ? 'active' : '' }}"><i class="mdi mdi-view-list"></i> Schedule Chart</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="{{ Request::is('diagnostic/testlists/*')?'true':'false'}}"><i class="fa fa-stethoscope"></i><span class="hide-menu"> Manage Tests</span></a>
+                    <ul aria-expanded="{{ Request::is('diagnostic/testlists/*')?'true':'false'}}" class="collapse {{ Request::is('diagnostic/testlists/*')?'in':''}}">
+                        <li><a href="{{ url('diagnostic/testlists') }}" class="{{ request()->is('diagnostic/testlists') ? 'active' : '' }}"><i class="fa fa-list"></i> Test List</a></li>
+                        <li><a href="{{ url('diagnostic/categories') }}" class="{{ request()->is('diagnostic/categories') ? 'active' : '' }}"><i class="fa fa-list-alt"></i> Test Category</a></li>
+                    </ul>
+                </li>
+
                 <li><a href="{{url('logout')}}"><i class="mdi mdi-power"></i> <span class="hide-menu"> Logout</span></a></li> 
 
             </ul>

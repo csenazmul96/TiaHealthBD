@@ -51,7 +51,6 @@
                                 <li><a href="{{url('schedule')}}" class="{{ request()->is('schedule/') ? 'active' : '' }}"><i class="mdi mdi-view-list"></i> New Schedule</a></li>
                                     <li><a href="{{url('schedule/chart/')}}" class="{{ request()->is('schedule/chart/') ? 'active' : '' }}"><i class="mdi mdi-view-list"></i> Schedule Chart</a></li>
                             </ul>
-
                         </li>
                          
                         <li class="{{ request()->is('doctor/*') ? 'active' : '' }}">

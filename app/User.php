@@ -59,7 +59,7 @@ class User extends EloquentUser
         return $this->hasOne(BedChargeCollection::class);
     }
     public function doctor(){
-        return $this->hasOne(Doctor::class);
+        return $this->hasOne(Doctor::class,'own_user_id');
     }
     public function transaction(){
         return $this->hasMany(Transation::class,'user_id');

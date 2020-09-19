@@ -1,0 +1,10 @@
+@import '../mixin/buttonstyle';
+.btn_common{
+    @include buttonstyle;
+}
+.btn_transparent {
+    @include trasparent_buttonstyle;
+}
+.btn_grey {
+    @include grey_buttonstyle;
+}
