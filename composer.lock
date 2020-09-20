@@ -1490,7 +1490,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-08T15:29:50+00:00"
+            "time": "2020-02-28T15:47:45+00:00"
         },
         {
             "name": "maennchen/zipstream-php",
@@ -6429,7 +6429,11 @@
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
             "time": "2020-08-27T03:24:44+00:00"
+=======
+            "time": "2020-03-02T05:59:21+00:00"
+>>>>>>> dd8f25bbac483ebd7e96db48121d2b912de1c10c
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
