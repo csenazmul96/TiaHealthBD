@@ -12,8 +12,7 @@ Route::get('404', function () {
 })->name('404');
 
 
-// Forntend Authorization pages , can access all user;
-Route::get('/', 'HomeController@index');
+// Forntend Authorization pages , can access all user; 
 Route::get('login', 'HomeController@login');
 Route::post('login', 'HomeController@process_login')->name('process_login');
 Route::get('register', 'HomeController@register');

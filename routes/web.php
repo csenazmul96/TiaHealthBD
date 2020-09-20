@@ -14,6 +14,8 @@ Route::get('blank/', function () {
     //some exprement
 });
 
+
+include('FrontRoute.php'); // Including All Front router
 include('core.php'); // Including Accounts, Expanse, User Management, Tax management ETC..
 // include('pharmacy.php');
 include('diagnostic.php'); //Including appointment system
